@@ -33,11 +33,6 @@ export class Todo {
     }
 
     printDetails() {
-        return (`Title: ${this.getTitle()}
-            \nDescription: ${this.getDescription()}
-            \nDate Limit: ${this.getDueDate()}
-            \nPriority: ${this.getPriority()}
-            \nNotes: ${this.getNotes()}
-            \nChecklist: ${this.getChecklist()}`);
+        return (`Title: ${this.getTitle()}\nDescription: ${this.getDescription()}\nDate Limit: ${this.getDueDate()}\nPriority: ${this.getPriority()}\nNotes: ${this.getNotes()}\nChecklist: ${this.getChecklist()}`);
     }
 }
