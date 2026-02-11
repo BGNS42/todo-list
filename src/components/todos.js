@@ -8,6 +8,8 @@ export class Todo {
         this.checklist = checklist;
     }
 
+    id = crypto.randomUUID();
+
     getTitle() {
         return this.title;
     }

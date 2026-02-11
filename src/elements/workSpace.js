@@ -4,7 +4,7 @@ const workSpace = document.createElement("div");
 workSpace.id = "workSpace";
 
 function populateWorkSpace() {
-    Object.keys(project).forEach(item => {
+    project.forEach(item => {
         console.log(item);
         const pPasta = document.createElement("div");
         pPasta.id = item;

@@ -4,10 +4,10 @@ const novoTodo = new Todo("Novo Afazer", "pqueno afazer", "12-08","alta", "peque
 
 const novoTodo2 = new Todo("Novo Afazer2", "pqueno afazer2", "12-082","alta2", "pequena nota2", false);
 
-const project =  {};
+const project =  [];
 
-function populateProjects(key, something) {
-    project[key] = something;
+function populateProjects(something) {
+    project.push(something);
 }
 
 populateProjects("novoTodo", novoTodo.printDetails());

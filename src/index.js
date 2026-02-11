@@ -1,14 +1,14 @@
 import "./style/styles.css";
 import "./style/pages.css";
-import { pageLoad } from "./components/pageLoad";
-import { sideBar } from "./elements/sideBar";
-import { workSpace } from "./elements/workSpace";
+// import { pageLoad } from "./components/pageLoad";
+// import { sideBar } from "./elements/sideBar";
+// import { workSpace } from "./elements/workSpace";
+// import { Button } from "./elements/button";
+// import { container } from "webpack";
 
-const sideMenu = document.querySelector("#sideBar");
-const b = sideBar();
-sideMenu.appendChild(b);
+const doc = document.querySelector(".container");
 
-
-pageLoad(workSpace);
-
+doc.addEventListener("click", (e) => {
+    e.target.tagName === "BUTTON" ? alert(e.target.tagName) : e.preventDefault();
+})
 
