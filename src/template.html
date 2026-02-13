@@ -8,21 +8,41 @@
 <body>
     <main class="container">
         <h1>Minhas Tarefas</h1>
-
-        <form aria-label="Criar Tarefa" id="todo-form">
-            <label for="todo-input" class="sr-only">Nova Tarefa</label>
-            <input type="text" id="todo-input" name="title" placeholder="Adicionar nova tarefa..." autocomplete="off" />
-            <button class="btn-add" type="submit">Adicionar</button>
-        </form>
-
+                
         <section aria-label="Filtros">
             <button class="filter-all" data-filter="all" aria-pressed="true">Todas</button>
             <button class="filter-ativas" data-filter="active">Ativas</button>
             <button class="filter-concluidas" data-filter="completed">Concluídas</button>
+            <button class="btn-add" type="submit">Adicionar</button>
         </section>
-
+        
+        <dialog>
+            <form method="dialog">
+                <div class="title">
+                    <label for="todoTitle">Title:</label>
+                    <input type="text" name="" id="todoTitle" required>
+                </div>
+                <div class="description">
+                    <label for="todoDetails">Description:</label>
+                    <input type="text" name="" id="todoDetails" required>
+                </div>
+                <div class="dueDate">
+                    <label for="todoDueDate">Due date:</label>
+                    <input type="date" name="" id="todoDueDate" required>
+                </div>
+                <div class="priority">
+                    <label for="todoPriority">Is it a PRIORITY?</label>
+                    <input type="checkbox" name="todo_priority" id="todoPriority">
+                </div>
+                <div class="btns">
+                    <button class="button" id="cancel"><span>Cancel</span></button>
+                    <button class="button" id="addButton"><span>Add</span></button>
+                </div>
+            </form>
+        </dialog>        
+        
         <ul id="todo-list" aria-live="polite"></ul>
-
+        
         <footer>
             <button id="clear-completed">Limpar concluídas</button>
         </footer>

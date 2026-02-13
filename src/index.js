@@ -1,14 +1,34 @@
 import "./style/styles.css";
 import "./style/pages.css";
-// import { pageLoad } from "./components/pageLoad";
-// import { sideBar } from "./elements/sideBar";
-// import { workSpace } from "./elements/workSpace";
-// import { Button } from "./elements/button";
-// import { container } from "webpack";
+import { addProject, logProjects } from "./app/state";
+import { Todo } from "./components/todos";
 
-const doc = document.querySelector(".container");
+const addBtn = document.querySelector(".btn-add");
+const form = document.querySelector("form");
+const dglog = document.querySelector("dialog");
+const cancelBtn = document.querySelector("#cancel");
 
-doc.addEventListener("click", (e) => {
-    e.target.tagName === "BUTTON" ? alert(e.target.tagName) : e.preventDefault();
-})
+
+form.addEventListener("submit", () => {
+    const newTodo = new Todo(todoTitle.value, todoDetails.value, todoDueDate.value, todoPriority.value);
+    addProject("projeto", newTodo);
+    logProjects();
+});
+
+
+addBtn.addEventListener("click", () => {
+    form.reset();
+    dglog.showModal();
+});
+
+cancelBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    dglog.close();
+});
+
+dglog.addEventListener("click", (event) => {
+    if (event.target === dglog) {
+      dglog.close();
+    }
+});
 

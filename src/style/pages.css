@@ -18,3 +18,33 @@ body {
 .pastaProjeto {
     border: 2px solid black;
 }
+
+
+
+.form {
+  font-family: inherit;
+}
+
+
+dialog:open {
+  place-self: center;
+  border: 2px solid slategray;
+  border-radius: 8px;
+}
+
+dialog::backdrop{
+  background: var(--backdrop-color);
+}
+
+form .btns {
+  display: flex;
+  justify-content: end;
+  gap: .5rem;
+}
+
+#addButton:hover {
+  background-color: var(--addBtn-color);
+}
+#cancel:hover {
+  background-color: var(--cancel-color);
+}
