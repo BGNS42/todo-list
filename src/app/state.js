@@ -25,10 +25,19 @@ const projetos = [];
 
 function addProject(novoTodo) {
     projetos.push(novoTodo);
+    logProjects();
 }
 
 function logProjects() {
     console.table(projetos);
 }
 
-export { addProject, logProjects }
+function removeFromProjects(item) {
+    const indexToRemove = projetos.findIndex(item => item.id === item.id);
+    if (indexToRemove !== -1) {
+        projetos.splice(indexToRemove, 1);
+    };
+    logProjects();
+}
+    
+export { addProject, removeFromProjects }

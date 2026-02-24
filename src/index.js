@@ -1,8 +1,8 @@
 import "./style/styles.css";
 import "./style/pages.css";
-import { addProject, logProjects } from "./app/state";
+import { addProject } from "./app/state";
 import { Todo } from "./components/todos";
-import { refreshList } from "./components/refreshList";
+import { showTodo } from "./components/todoCard";
 
 const addBtn = document.querySelector(".btn-add");
 const form = document.querySelector("form");
@@ -14,8 +14,7 @@ form.addEventListener("submit", () => {
     const resetaPriority = todoPriority.checked;
     const newTodo = new Todo(todoTitle.value, todoDetails.value, todoDueDate.value, resetaPriority);
     addProject(newTodo);
-    logProjects();
-    refreshList(newTodo);
+    showTodo(newTodo);
 });
 
 
