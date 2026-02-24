@@ -20,10 +20,11 @@
 
 // --------------------------------------
 
-const projetos = {};
+const projetos = [];
 
-function addProject(projeto, novoTodo) {
-    projetos[projeto] = novoTodo;
+
+function addProject(novoTodo) {
+    projetos.push(novoTodo);
 }
 
 function logProjects() {
