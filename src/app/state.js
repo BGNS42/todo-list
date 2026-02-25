@@ -32,8 +32,8 @@ function logProjects() {
     console.table(projetos);
 }
 
-function removeFromProjects(item) {
-    const indexToRemove = projetos.findIndex(item => item.id === item.id);
+function removeFromProjects(todo) {
+    const indexToRemove = projetos.findIndex(item => item.id === todo.id);
     if (indexToRemove !== -1) {
         projetos.splice(indexToRemove, 1);
     };

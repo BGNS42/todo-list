@@ -18,31 +18,32 @@
                 
             </div>
         </section>
-        
-        <dialog>
-            <form method="dialog">
-                <div class="title">
-                    <label for="todoTitle">Title:</label>
-                    <input type="text" name="" id="todoTitle" required>
-                </div>
-                <div class="description">
-                    <label for="todoDetails">Description:</label>
-                    <input type="text" name="" id="todoDetails" required>
-                </div>
-                <div class="dueDate">
-                    <label for="todoDueDate">Due date:</label>
-                    <input type="date" name="" id="todoDueDate" required>
-                </div>
-                <div class="priority">
-                    <label for="todoPriority">Is it a PRIORITY?</label>
-                    <input type="checkbox" name="todo_priority" id="todoPriority">
-                </div>
-                <div class="btns">
-                    <button class="button" id="cancel"><span>Cancel</span></button>
-                    <button class="button" id="addButton"><span>Add</span></button>
-                </div>
-            </form>
-        </dialog>        
+        <template id="todo-form-template">
+            <dialog>
+                <form method="dialog">
+                    <div class="title">
+                        <label for="todoTitle">Title:</label>
+                        <input type="text" name="" id="todoTitle" required>
+                    </div>
+                    <div class="description">
+                        <label for="todoDetails">Description:</label>
+                        <input type="text" name="" id="todoDetails" required>
+                    </div>
+                    <div class="dueDate">
+                        <label for="todoDueDate">Due date:</label>
+                        <input type="date" name="" id="todoDueDate" required>
+                    </div>
+                    <div class="priority">
+                        <label for="todoPriority">Is it a PRIORITY?</label>
+                        <input type="checkbox" name="todo_priority" id="todoPriority">
+                    </div>
+                    <div class="btns">
+                        <button class="button" id="cancel"><span>Cancel</span></button>
+                        <button class="button" id="addButton"><span>Add</span></button>
+                    </div>
+                </form>
+            </dialog>        
+        </template>
         
         <ul id="todo-list" aria-live="polite"></ul>
         
