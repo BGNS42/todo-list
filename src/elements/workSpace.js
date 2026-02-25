@@ -1,20 +1,20 @@
-import { project } from "../components/projects.js"
+// import { project } from "../components/projects.js"
 
-const workSpace = document.createElement("div");
-workSpace.id = "workSpace";
+// const workSpace = document.createElement("div");
+// workSpace.id = "workSpace";
 
-function populateWorkSpace() {
-    project.forEach(item => {
-        console.log(item);
-        const pPasta = document.createElement("div");
-        pPasta.id = item;
-        pPasta.classList = "pastaProjeto";
-        pPasta.innerText += `${item}`;
+// function populateWorkSpace() {
+//     project.forEach(item => {
+//         console.log(item);
+//         const pPasta = document.createElement("div");
+//         pPasta.id = item;
+//         pPasta.classList = "pastaProjeto";
+//         pPasta.innerText += `${item}`;
 
-        workSpace.appendChild(pPasta);
-    });
-}
+//         workSpace.appendChild(pPasta);
+//     });
+// }
 
-populateWorkSpace();
+// populateWorkSpace();
 
-export { workSpace }
+// export { workSpace }

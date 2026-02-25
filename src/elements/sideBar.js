@@ -1,10 +1,10 @@
-export function sideBar() {
-    const menuList = document.createElement("ul");
+// export function sideBar() {
+//     const menuList = document.createElement("ul");
 
-    const menuItem = document.createElement("li");
-    menuItem.innerText = "Árvore mostrando os projetos e todos - EM PRODUÇÃO";
+//     const menuItem = document.createElement("li");
+//     menuItem.innerText = "Árvore mostrando os projetos e todos - EM PRODUÇÃO";
 
-    menuList.appendChild(menuItem);
+//     menuList.appendChild(menuItem);
 
-    return menuList;
-}
+//     return menuList;
+// }
