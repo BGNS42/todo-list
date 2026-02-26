@@ -21,8 +21,9 @@ form.addEventListener("submit", () => {
     const title = dglog.querySelector("#todoTitle").value;
     const details = dglog.querySelector("#todoDetails").value;
     const dueDate = dglog.querySelector("#todoDueDate").value;
+    const notes = dglog.querySelector("#todoNotes").value;
 
-    const newTodo = new Todo(title, details, dueDate, resetaPriority);
+    const newTodo = new Todo(title, details, dueDate, resetaPriority, notes);
     addProject(newTodo);
     showTodo(newTodo);
 

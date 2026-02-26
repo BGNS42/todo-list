@@ -40,4 +40,4 @@ function removeFromProjects(todo) {
     logProjects();
 }
     
-export { addProject, removeFromProjects }
+export { addProject, removeFromProjects, logProjects }

@@ -9,6 +9,7 @@ export class Todo {
     }
 
     id = crypto.randomUUID();
+    completed = false;
 
     getTitle() {
         return this.title;
