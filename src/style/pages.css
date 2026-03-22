@@ -21,15 +21,17 @@ body {
     border: 2px solid black;
 } */
 
-
+.container h1 {
+  text-align: center;
+  width: min(50vw);
+}
 
 .form {
   font-family: inherit;
 }
 
-
 dialog:open {
-  place-self: center;
+  margin: 18vh auto;
   border: 2px solid slategray;
   border-radius: 8px;
 }
@@ -52,7 +54,6 @@ form .btns {
 }
 
 .todoCard {
-  /* border: 2px solid green; */
   background-color: antiquewhite;
   box-shadow: var(--box-shadow-preset);
   border-radius: 10px;
