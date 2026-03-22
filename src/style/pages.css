@@ -3,9 +3,11 @@ body {
     display: flex;
     justify-content: center;
     gap: clamp(5px, 100vw, 10vw);
+    
+    --box-shadow-preset: -5px 5px 4px rgba(0, 0, 0, 0.24);
 }
 
-#sideBar {
+/* #sideBar {
     background-color: lightgoldenrodyellow;
     max-width: 30vw;
 }
@@ -17,7 +19,7 @@ body {
 
 .pastaProjeto {
     border: 2px solid black;
-}
+} */
 
 
 
@@ -47,4 +49,17 @@ form .btns {
 }
 #cancel:hover {
   background-color: var(--cancel-color);
+}
+
+.todoCard {
+  /* border: 2px solid green; */
+  background-color: antiquewhite;
+  box-shadow: var(--box-shadow-preset);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px 0px;
+}
+
+.todoCard button {
+  margin-right: 0.5vh;
 }

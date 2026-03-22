@@ -52,7 +52,7 @@ export function showTodo(todo) {
                 break;
             case "completeBtn":
                 todo.completed = true;
-                todo.checklist = true;
+                //todo.checklist = true;
                 console.log("Done");
                 lista.removeChild(todoCard)
                 logProjects();

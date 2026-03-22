@@ -14,6 +14,15 @@ const addBtn = document.querySelector(".btn-add");
 const form = dglog.querySelector("form");
 const cancelBtn = dglog.querySelector("#cancel");
 
+// Just a todo example to prevent the need to do the form all again
+const exampleTodo = new Todo("Example Todo", "The Todo details should goes here", "26/03/2026", false, "Notes should be here like this.");
+addProject(exampleTodo);
+showTodo(exampleTodo);
+
+const exampleTodo2 = new Todo("Example Todo 2", "The Todo details should goes here", "26/03/2026", false, "Notes should be here like this.");
+addProject(exampleTodo2);
+showTodo(exampleTodo2);
+
 
 form.addEventListener("submit", () => {
     const resetaPriority = todoPriority.checked;

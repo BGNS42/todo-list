@@ -1,11 +1,10 @@
 export class Todo {
-    constructor(title, description, dueDate, priority, notes, checklist) {
+    constructor(title, description, dueDate, priority, notes) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
         this.notes = notes;
-        this.checklist = checklist;
     }
 
     id = crypto.randomUUID();
@@ -31,11 +30,7 @@ export class Todo {
         return this.notes;
     }
 
-    getChecklist() {
-        return this.checklist;
-    }
-
     printDetails() {
-        return (`Title: ${this.getTitle()}\nDescription: ${this.getDescription()}\nDate Limit: ${this.getDueDate()}\nPriority: ${this.getPriority()}\nNotes: ${this.getNotes()}\nChecklist: ${this.getChecklist()}`);
+        return (`Title: ${this.getTitle()}\nDescription: ${this.getDescription()}\nDate Limit: ${this.getDueDate()}\nPriority: ${this.getPriority()}\nNotes: ${this.getNotes()}`);
     }
 }
