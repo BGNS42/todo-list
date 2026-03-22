@@ -58,5 +58,13 @@ li {
 }
 
 button {
-  box-shadow: var(--box-shadow-preset);;
+  box-shadow: var(--box-shadow-preset);
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
 }
