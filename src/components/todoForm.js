@@ -1,3 +1,4 @@
+// Function that handle the creation of the To-do form at DOM
 
 function todoForm() {
     const template = document.querySelector("#todo-form-template");

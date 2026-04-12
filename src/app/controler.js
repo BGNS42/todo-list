@@ -5,7 +5,7 @@ import { Todo } from "../components/todos";
 import { addProject } from "./state";
 
 
-function createTodo(formulario) {
+function createTodoFromForm(formulario) {
     const resetaPriority = todoPriority.checked;
 
     const title = formulario.querySelector("#todoTitle").value;
@@ -18,4 +18,4 @@ function createTodo(formulario) {
     showTodo(newTodo);
 }
 
-export { createTodo }
+export { createTodoFromForm }

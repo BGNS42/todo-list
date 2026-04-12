@@ -1,3 +1,5 @@
+// Create all to-do card elements from a to-do
+
 import { removeFromProjects, logProjects } from "../app/state";
 
 export function showTodo(todo) {
@@ -36,7 +38,7 @@ export function showTodo(todo) {
     completeBtn.classList.add("completeBtn");
     completeBtn.innerText = "Done";
     
-    const button = todoCard.querySelectorAll("button");
+    //const button = todoCard.querySelectorAll("button");
     
     todoCard.addEventListener("click", (e) => {
         switch(e.target.className) {
@@ -52,7 +54,6 @@ export function showTodo(todo) {
                 break;
             case "completeBtn":
                 todo.completed = true;
-                //todo.checklist = true;
                 console.log("Done");
                 lista.removeChild(todoCard)
                 logProjects();

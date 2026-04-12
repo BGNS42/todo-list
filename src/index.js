@@ -1,10 +1,10 @@
 import "./style/styles.css";
 import "./style/pages.css";
-import { Todo } from "./components/todos";
-import { todoForm } from "./elements/todoForm";
-import { createTodo } from "./app/controler";
+import { todoForm } from "./components/todoForm";
+import { createTodoFromForm } from "./app/controler";
 
 // needed just for examples to show
+import { Todo } from "./components/todos";
 import { addProject } from "./app/state";
 import { showTodo } from "./components/todoCard";
 
@@ -28,7 +28,7 @@ showTodo(exampleTodo2);
 
 
 form.addEventListener("submit", () => {
-    createTodo(dglog);
+    createTodoFromForm(dglog);
     form.reset();
 });
 
