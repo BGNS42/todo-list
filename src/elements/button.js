@@ -4,18 +4,12 @@
 //     button.innerText = label;
 // }
 
-class Button {
-    constructor(type, label) {
-        this.type = type;
-        this.label = label;
-    }
-
-    create() {
-        const button = document.createElement("button");
-        button.classList = this.type;
-        button.innerText = this.label;
-        return button;
-    }
+function createButton(text, className, onClick) {
+    const btn = document.createElement("button");
+    btn.innerText = text;
+    btn.classList.add(className);
+    if (onClick) btn.onClick = onClick;
+    return btn;
 }
 
-export { Button }
+export { createButton }

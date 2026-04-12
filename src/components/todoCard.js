@@ -1,74 +1,65 @@
 // Create all to-do card elements from a to-do
 
 import { removeFromProjects, logProjects } from "../app/state";
+import { createButton } from "../elements/button";
+
+function createTodoDetail(label, value, className) {
+    const li = document.createElement("li");
+    li.classList.add(className);
+    li.innerText = `${label}: ${value}`;
+    
+    return li;
+}
+
+function setupEventListeners(card, todo, lista) {
+    card.addEventListener("click", (e) => {
+        const target = e.target;
+        
+        if (target.classList.contains("delBtn")) {
+            lista.removeChild(card);
+            try {
+                removeFromProjects(todo);
+            } catch (error) {
+                console.error(`Error deleting todo: ${error}`);
+            }
+        }
+        
+        if (target.classList.contains("completeBtn")) {
+            todo.completed = true;
+            console.log("Todo marcado como concluído");
+            lista.removeChild(card);
+            logProjects();
+        }
+    })
+}
 
 export function showTodo(todo) {
     const lista = document.querySelector(".lista");
-
+    
     const todoCard = document.createElement("div");
     todoCard.classList.add(`todoCard`);
     todoCard.dataset.id = `${todo.id}`;
     
-    const todoName = document.createElement("li");
-    todoName.classList.add(`todoName`);
-    todoName.innerText = `Todo: ${todo.getTitle()}`;
-
-    const todoDesc = document.createElement("li");
-    todoDesc.classList.add(`todoDescription`);
-    todoDesc.innerText = `Description: ${todo.getDescription()}`;
-
-    const todoDueDate = document.createElement("li");
-    todoDueDate.classList.add(`todoDueDate`);
-    todoDueDate.innerText = `Date limit: ${todo.getDueDate()}`;
-
-    const todoPriority = document.createElement("li");
-    todoPriority.classList.add(`todoPriority`);
-    todoPriority.innerText = `Priority: ${todo.getPriority()}`;
-
-    const todoNotes = document.createElement("li");
-    todoNotes.classList.add(`todoNotes`);
-    todoNotes.innerText = `Notes: ${todo.getNotes()}`;
-
-    const delBtn = document.createElement("button");
-    delBtn.classList.add("delBtn");
-    delBtn.innerText = "Delete";
-
+    // cria informações do todoCard a partir do todo
+    const details = [
+        createTodoDetail("Todo", todo.getTitle(), "todoName"),
+        createTodoDetail("Description", todo.getDescription(), "todoDescription"),
+        createTodoDetail("Date limit", todo.getDueDate(), "todoDueDate"),
+        createTodoDetail("Priority", todo.getPriority(), "todoPriority"),
+        createTodoDetail("Notes", todo.getNotes(), "todoNotes")
+    ];
     
-    const completeBtn = document.createElement("button");
-    completeBtn.classList.add("completeBtn");
-    completeBtn.innerText = "Done";
+    details.forEach(detail => todoCard.appendChild(detail));
     
-    //const button = todoCard.querySelectorAll("button");
+    // cria os botões
+    const delBtn = createButton("Delete", "delBtn");
+    const completeBtn = createButton("Done", "completeBtn");
     
-    todoCard.addEventListener("click", (e) => {
-        switch(e.target.className) {
-            case "delBtn":
-                if (todo.id === todoCard.dataset.id) {
-                    lista.removeChild(todoCard);
-                    try {
-                        removeFromProjects(todo);
-                    } catch (error) {
-                        console.error(`Error deleting todo: ${error}`);
-                    }
-                };
-                break;
-            case "completeBtn":
-                todo.completed = true;
-                console.log("Done");
-                lista.removeChild(todoCard)
-                logProjects();
-                break;
-        };
-    });
+    todoCard.append(delBtn, completeBtn);
 
-
+    // Monta os EvenetListener dos botões
+    setupEventListeners(todoCard, todo, lista);    
+    
+    // Adiciona o card a lista no DOM
     lista.appendChild(todoCard);
-    todoCard.appendChild(todoName);
-    todoCard.appendChild(todoDesc);
-    todoCard.appendChild(todoDueDate);
-    todoCard.appendChild(todoPriority);
-    todoCard.appendChild(todoNotes);
-
-    todoCard.appendChild(delBtn);
-    todoCard.appendChild(completeBtn);
 }
