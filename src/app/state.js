@@ -22,14 +22,13 @@
 
 const projetos = [];
 
+function logProjects() {
+    console.table(projetos);
+}
 
 function addProject(novoTodo) {
     projetos.push(novoTodo);
     logProjects();
-}
-
-function logProjects() {
-    console.table(projetos);
 }
 
 function removeFromProjects(todo) {

@@ -6,6 +6,7 @@ function todoForm() {
 
     const dglog = clone.querySelector("dialog");
 
+    document.body.appendChild(dglog);
     return dglog;
 }
 
