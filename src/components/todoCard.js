@@ -30,6 +30,10 @@ function setupEventListeners(card, todo, lista) {
             lista.removeChild(card);
             logProjects();
         }
+
+        if (target.classList.contains("editBtn")) {
+            alert("EDITADO")
+        }
     })
 }
 
@@ -52,10 +56,11 @@ export function showTodo(todo) {
     details.forEach(detail => todoCard.appendChild(detail));
     
     // cria os botões
+    const editBtn = createButton("Edit", "editBtn");
     const delBtn = createButton("Delete", "delBtn");
     const completeBtn = createButton("Done", "completeBtn");
     
-    todoCard.append(delBtn, completeBtn);
+    todoCard.append(editBtn, delBtn, completeBtn);
 
     // Monta os EvenetListener dos botões
     setupEventListeners(todoCard, todo, lista);    
