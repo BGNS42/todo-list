@@ -30,6 +30,11 @@ export class Todo {
         return this.notes;
     }
 
+    editTodo(todo, prop, eddited) {
+        console.log("editado");
+        // Precisa abrir novamente o modal com os campos do to-do atual, com opção de editar os campos e salvar as alterações ou submter. Ao submeter, precisa atualizar a informação no DOM e na lista projects = []
+    }
+
     printDetails() {
         return (`Title: ${this.getTitle()}\nDescription: ${this.getDescription()}\nDate Limit: ${this.getDueDate()}\nPriority: ${this.getPriority()}\nNotes: ${this.getNotes()}`);
     }

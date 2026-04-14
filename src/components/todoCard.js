@@ -2,6 +2,7 @@
 
 import { removeFromProjects, logProjects } from "../app/state";
 import { createButton } from "../elements/button";
+import { openEditTodoForm } from "../app/controler";
 
 function createTodoDetail(label, value, className) {
     const li = document.createElement("li");
@@ -17,11 +18,7 @@ function setupEventListeners(card, todo, lista) {
         
         if (target.classList.contains("delBtn")) {
             lista.removeChild(card);
-            try {
-                removeFromProjects(todo);
-            } catch (error) {
-                console.error(`Error deleting todo: ${error}`);
-            }
+            removeFromProjects(todo);
         }
         
         if (target.classList.contains("completeBtn")) {
@@ -32,7 +29,10 @@ function setupEventListeners(card, todo, lista) {
         }
 
         if (target.classList.contains("editBtn")) {
-            alert("EDITADO")
+            const dialog = document.querySelector("dialog");
+            if (dialog) {
+                openEditTodoForm(todo, dialog);
+            }
         }
     })
 }
@@ -41,10 +41,9 @@ export function showTodo(todo) {
     const lista = document.querySelector(".lista");
     
     const todoCard = document.createElement("div");
-    todoCard.classList.add(`todoCard`);
+    todoCard.classList.add("todoCard");
     todoCard.dataset.id = `${todo.id}`;
     
-    // cria informações do todoCard a partir do todo
     const details = [
         createTodoDetail("Todo", todo.getTitle(), "todoName"),
         createTodoDetail("Description", todo.getDescription(), "todoDescription"),
@@ -55,16 +54,12 @@ export function showTodo(todo) {
     
     details.forEach(detail => todoCard.appendChild(detail));
     
-    // cria os botões
     const editBtn = createButton("Edit", "editBtn");
     const delBtn = createButton("Delete", "delBtn");
     const completeBtn = createButton("Done", "completeBtn");
     
     todoCard.append(editBtn, delBtn, completeBtn);
 
-    // Monta os EvenetListener dos botões
     setupEventListeners(todoCard, todo, lista);    
-    
-    // Adiciona o card a lista no DOM
     lista.appendChild(todoCard);
 }
